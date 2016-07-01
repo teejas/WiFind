@@ -1,6 +1,6 @@
 // GET home page
 module.exports.home = function(req, res) {
-    res.render('index', {title: 'Loc8r'});
+    res.render('locationlist', {title: 'WiFind'});
 };
 
 // GET location details page
