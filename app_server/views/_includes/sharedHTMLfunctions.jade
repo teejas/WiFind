@@ -1,0 +1,6 @@
+mixin starRating(rating)
+  small &nbsp;
+  - for(i=0;i < rating; i++)
+    span.glyphicon.glyphicon-star
+  - for(i=rating; i < 5; i++)
+    span.glyphicon.glyphicon-star-empty

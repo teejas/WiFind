@@ -14,11 +14,7 @@ block content
                     h4
                       each location in locations
                         a(href="/location")= location.name
-                        small &nbsp;
-                            - for(i=0; i < location.rating; i++) 
-                                span.glyphicon.glyphicon-star
-                            - for(i=location.rating; i < 5; i++) 
-                                span.glyphicon.glyphicon-star-empty                           
+                        +starRating(location.rating)                     
                         span.badge.pull-right.badge-default= location.distance
                         p.address= location.address
                         p 
@@ -27,4 +23,4 @@ block content
                             &nbsp;
                         
         .col-xs-12.col-sm-4
-            p.lead Ever feel the need to get connected immediately? WiFind helps you find the next hotspot to sit down, grab some food or a drink, and get connected immediately! 
+            p.lead= sidebar
