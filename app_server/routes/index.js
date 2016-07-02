@@ -6,7 +6,7 @@ var locationCtrl = require('../controllers/location')
 /* GET location pages. */
 router.get('/', locationCtrl.home);
 router.get('/location', locationCtrl.locationDetails);
-router.get('/review/new', locationCtrl.review);
+router.get('/location/review/new', locationCtrl.review);
 
 /* GET about page */
 router.get('/about', aboutCtrl.about);
