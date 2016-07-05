@@ -24,21 +24,21 @@ mongoose.connection.on('disconnected', function() {
 
 // message for nodemon restart
 process.once('SIGUSR2', function() {
-  shutdownMessage('nodemon restart', function() {
+  shutdownMessage(' nodemon restart', function() {
     process.kill(process.pid, 'SIGUSR2');
   });
 });
 // message for app termination
 process.once('SIGINT', function() {
-  shutdownMessage('app closed', function() {
+  shutdownMessage(' app closed', function() {
     process.exit(0);
   });
 });
 // message for heroku termination
 process.once('SIGTERM', function() {
-  shutdownMessage('heroku app closed', function() {
+  shutdownMessage(' heroku app closed', function() {
     process.exit(0);
   });
 });
 
-require('/locations');
+require('./schema');

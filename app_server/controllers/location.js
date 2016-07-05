@@ -41,7 +41,7 @@ module.exports.locationDetails = function(req, res) {
       },
       location: {
         rating: 4,
-        addres: '125 Wallaby Lane, Sydney, Australia',
+        address: '125 Wallaby Lane, Sydney, Australia',
         facilities: ['Hot Drinks', 'Food', 'Free WiFi'],
         distance: '100mi',
         coords: { lat: 51.455041, lng: -0.9690884},
