@@ -7,6 +7,9 @@ var shutdownMessage = function(msg, exit) {
   })
 }
 var dbURI = 'mongodb://localhost/WiFind';
+if(process.env.NODE_ENV === 'production') {
+  dbURI = process.env.MONGOLAB_URI;
+}
 mongoose.connect(dbURI);
 
 // log connection
