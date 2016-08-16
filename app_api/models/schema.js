@@ -7,7 +7,7 @@ var openingTimesSchema = new mongoose.Schema({
   closed: {type: Boolean, required: true}
 });
 
-var reviewsSchema = new mongoose.Schema({
+var reviewSchema = new mongoose.Schema({
   rating: {type: Number, 'default': 0, min: 0, max: 5},
   author: String,
   review: String,
@@ -19,9 +19,9 @@ var locationSchema = new mongoose.Schema({
   address: String,
   rating: {type: Number, 'default': 0, min: 0, max: 5},
   facilities: [String],
-  coords: {type: [Number], index: '2dsphere'},
+  coords: {type: [Number], index: '2dsphere', required: true},
   openHours: [openingTimesSchema],
-  reviews: [reviewsSchema]
+  reviews: [reviewSchema]
 });
 
 mongoose.model('Location', locationSchema, 'locations');
