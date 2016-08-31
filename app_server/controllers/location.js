@@ -1,3 +1,10 @@
+var request = require('request');
+var apiOptions = {
+  server: 'https://localhost:3000'
+};
+if(process.env.NODE_ENV === 'production') {
+  apiOptions.server = 'https://wifind.herokuapp.com/';
+}
 // GET home page
 module.exports.home = function(req, res) {
   res.render('location-list', {

@@ -151,5 +151,22 @@ module.exports.locationsUpdateOne = function(req, res) {
 };
   
 module.exports.locationsDeleteOne = function(req, res) {
-  sendJSONResponse(res, 200, { 'status': 'success' });
+  var locationid = req.params.locationid;
+  if(locationid) {
+    Loc
+      .findByIdAndRemove(locationid)
+      .exec(
+        function(err, location) {
+          if(err) {
+            sendJSONResponse(res, 400, err);
+          } else {
+            sendJSONResponse(res, 204, null);
+          }
+        }
+    )
+  } else {
+    sendJSONResponse(res, 404, {
+      'message': 'Not found, locationid is required'
+    });
+  }
 };
